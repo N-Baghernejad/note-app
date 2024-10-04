@@ -4,18 +4,18 @@ function AddNewNote() {
   const[title,setTitle]= useState("");
   const[description,setDescription]= useState("");
   const handleSubmit= (e)=>{
-    event.preventDefault();
+    e.preventDefault();
     const newNote={
       title,
       description,
       id:Date.now(),
       completed:false,
-      createdAdd:new Date().toISOString()
+      createdAt:new Date().toISOString()
     };
     setTitle("")
     setDescription("")
+    console.log({newNote})
     };
- 
   return (
     <div className="add-new-note">
       <h2>Add new note</h2>
