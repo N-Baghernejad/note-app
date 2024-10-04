@@ -3,8 +3,17 @@ import { useState } from "react";
 function AddNewNote() {
   const[title,setTitle]= useState("");
   const[description,setDescription]= useState("");
-  const handleSubmit= (event)=>{
+  const handleSubmit= (e)=>{
     event.preventDefault();
+    const newNote={
+      title,
+      description,
+      id:Date.now(),
+      completed:false,
+      createdAdd:new Date().toISOString()
+    };
+    setTitle("")
+    setDescription("")
     };
   // const handleChange= (event)=>{
   //   setTitle(event.target.value);
@@ -15,13 +24,13 @@ function AddNewNote() {
       <form className="note form" onSubmit={handleSubmit}>
         <input 
           value={title} 
-          onChange={(event)=> settitle(event.target.value)} 
+          onChange={(e)=> setTitle(e.target.value)} 
           type="text" 
           className="text-field" 
           placeholder="Note title"/>
         <input 
         value={description}
-        onChange={event =>setDescription(event.target.value)}
+        onChange={e =>setDescription(e.target.value)}
         type="text" 
         className="text-field" 
         placeholder="Note description"/>
