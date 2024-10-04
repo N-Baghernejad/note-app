@@ -15,9 +15,7 @@ function AddNewNote() {
     setTitle("")
     setDescription("")
     };
-  // const handleChange= (event)=>{
-  //   setTitle(event.target.value);
-  // };
+ 
   return (
     <div className="add-new-note">
       <h2>Add new note</h2>
