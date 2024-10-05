@@ -14,7 +14,7 @@ function AddNewNote() {
     };
     setTitle("")
     setDescription("")
-    console.log({newNote})
+    setNotes((prevNotes)=>[...prevNotes,newNote]);
     };
   return (
     <div className="add-new-note">
