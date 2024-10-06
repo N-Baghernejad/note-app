@@ -1,9 +1,10 @@
 import "./App.css";
 import AddNewNote from "./components/AddNewNote";
 import NoteList from "./components/NoteList";
+import { useState } from "react";
 
 function App() {
-  const [notes,setNotes]=useState([]);
+  const [notes,setNotes] = useState([]);
   const handleAddNote=(newNote)=>{
     setNotes((prevNotes)=>[...prevNotes,newNote]);
   };

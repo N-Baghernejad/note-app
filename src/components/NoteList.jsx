@@ -1,7 +1,7 @@
 function NoteList() {
   return (
     <div>
-      
+      note
     </div>
   )
 }
