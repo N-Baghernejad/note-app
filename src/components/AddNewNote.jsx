@@ -1,23 +1,22 @@
 import { useState } from "react";
 
-function AddNewNote() {
+function AddNewNote({onAddNote}) {
   const[title,setTitle]= useState("");
   const[description,setDescription]= useState("");
   const handleSubmit= (e)=>{
-    event.preventDefault();
+    e.preventDefault();
+    if (!title || !description) return null;
     const newNote={
       title,
       description,
       id:Date.now(),
       completed:false,
-      createdAdd:new Date().toISOString()
+      createdAt:new Date().toISOString()
     };
-    setTitle("")
-    setDescription("")
-    };
-  // const handleChange= (event)=>{
-  //   setTitle(event.target.value);
-  // };
+    onAddNote(newNote);
+    setTitle("");
+    setDescription("");
+  };
   return (
     <div className="add-new-note">
       <h2>Add new note</h2>
@@ -37,7 +36,5 @@ function AddNewNote() {
         <button type="submit" className="btn btn--primary">Add New Note</button>
       </form>
     </div>
-  )
-}
-
+)};
 export default AddNewNote;
