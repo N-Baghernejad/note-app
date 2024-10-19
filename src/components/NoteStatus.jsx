@@ -1,12 +1,17 @@
-import React from 'react'
-
+import Message from "./Message";
 function NoteStatus({notes}) {
     //derived state
     const allNotes= notes.length;
     const completedNotes= notes.filter((n)=> n.completed).length;
     const unCompletedNotes=allNotes- completedNotes;
     
-    if(!allNotes) return <h2>No Notes has already been added.</h2>
+    if(!allNotes) 
+    return( 
+        <Message>
+            <span>info icon</span> <span>No Notes has already been added!</span>
+        </Message>
+    );
+
   return (
     <ul className='note-status'>
         <li>
